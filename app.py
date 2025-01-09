@@ -23,7 +23,7 @@ if not os.path.exists(model_path):
 model = joblib.load(model_path)
 
 # Danh sách các cột trong dữ liệu
-columns = ['Population','Male',"Female","Hospital","Subhospital","THPT"]
+columns =["Dân số", "Dân số nam", "Dân số nữ", "Số bệnh viện", "Số trạm y tế", "Số học sinh thpt"]
 
 @app.route('/', methods=['GET', 'POST'])
 
@@ -40,12 +40,12 @@ def predict():
 
         # Chuẩn bị dữ liệu đầu vào cho mô hình
         input_data = {
-            'Population': population,
-            'Male':male,
-            'Female':female,
-            'THPT':thpt,
-            'Hospital':hospital,
-            'Subhospital':subhospital
+            'Dân số': population,
+            'Dân số nam': male,
+            'Dân số nữ':female,
+            'Số bệnh viện':hospital,
+            'Số trạm y tế':subhospital,
+            'Số học sinh thpt':thpt
         }
 
 
