@@ -13,8 +13,6 @@ app = Flask(__name__)
 # Cấu hình Secret Key cho Flask (cần thiết cho Flash messages)
 app.config['SECRET_KEY'] = 'your_secure_secret_key_here'  # Thay thế bằng khóa bí mật của bạn
 
-# Khóa để đồng bộ hóa việc ghi vào tệp JSON
-lock = Lock()
 
 # Tải mô hình đã huấn luyện
 model_path = os.path.join(os.path.dirname(__file__), 'best_rf_model.pkl')
