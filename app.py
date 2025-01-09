@@ -97,7 +97,7 @@ def predict():
             "thpt":thpt,
             "hospital":hospital,
             "subhospital":subhospital,
-            "result":result,
+            "result": prediction,
             "date": datetime.now(timezone.utc).strftime('%d/%m/%Y %H:%M:%S') 
         }
 
