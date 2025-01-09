@@ -46,7 +46,7 @@ def save_history(history):
         with open(HISTORY_FILE, 'w', encoding='utf-8') as f:
             json.dump(history, f, ensure_ascii=False, indent=4)
 
-@app.route('/')
+@app.route('/',methods=['GET', 'POST'])
 def home():
     # Lấy tất cả lịch sử dự đoán từ tệp JSON, sắp xếp theo ngày mới nhất
     history = load_history()
