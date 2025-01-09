@@ -228,6 +228,9 @@
                             <div class="alert alert-success" role="alert">
                                 {{ result }}
                             </div>
+                        {% else %}
+                            <h2>Chưa có kết quả dự đoán</h2>
+                        {% endif %}
                         {% endif %}
                     </div>
                 </div>
@@ -271,13 +274,6 @@
             // Tạo mảng lỗi
             const errors = [];
 
-            if (experience <= 0 || experience >= 100) {
-                errors.push("Kinh nghiệm phải là số nguyên dương và nhỏ hơn 100");
-                document.getElementById("experience").focus(); // Đặt con trỏ vào ô sai đầu tiên
-            }  else if (follower <= 0) {
-                errors.push("Số lượng người theo dõi phải là số nguyên dương.");
-                document.getElementById("follower").focus();
-            } 
 
             // Hiển thị lỗi hoặc tiếp tục gửi form
             if (errors.length > 0) {
