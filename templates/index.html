@@ -235,6 +235,54 @@
                 </div>
             </div>
         </div>
+        <!-- Display Prediction History -->
+        <div class="history-container mt-5">
+            <h2 class="mb-3 text-center">Lịch Sử Dự Đoán</h2>
+            
+            <!-- Nút Xóa Lịch Sử -->
+            <div class="d-flex justify-content-end mb-3">
+                <form action="/clear_history" method="POST" onsubmit="return confirmClearHistory();">
+                    <button type="submit" class="btn btn-danger">Xóa Lịch Sử Dự Đoán</button>
+                </form>
+            </div>
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Dân số</th>
+                        <th>Dân số nam</th>
+                        <th>Dân số nữ</th>
+                        <th>Số bệnh viện</th>
+                        <th>Số trạm y tế</th>
+                        <th>Số học sinh thpt</th>
+                        <th>Kết Quả</th>
+                        <th>Ngày Dự Đoán</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if history %}
+                        {% for entry in history %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ entry.population }}</td>
+                                <td>{{entry.male}}</td>
+                                <td>{{entry.female}}</td>
+                                <td>{{entry.thpt}}</td>
+                                <td>{{entry.hospital}}</td>
+                                <td>{{entry.subhospital}}</td>                   
+                                <td>{{ "{:,.2f}".format(entry.result) }} %</td>
+                                <td>{{ entry.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="13" class="text-center">Không có dữ liệu lịch sử dự đoán.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
 
 
         <!-- Footer -->
