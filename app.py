@@ -86,7 +86,7 @@ def predict():
         prediction = model.predict(input_df)[0]
 
         # Chuyển đổi prediction sang float để JSON có thể serialize
-        prediction = float(prediction)
+        prediction = int(prediction)
 
         #Tạo bản ghi dự đoán mới
         new_prediction={
@@ -108,7 +108,7 @@ def predict():
 
 
         # Tạo kết quả hiển thị
-        result = f"Bác sĩ dự đoán: {prediction:,.2f} %"
+        result = f"Bác sĩ dự đoán: {prediction} người"
 
     except ValueError as e:
         result = f"Invalid input: {e}"
