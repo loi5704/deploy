@@ -177,7 +177,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10"> <!-- Tăng chiều rộng của form -->
                 <div class="form-container">
-                    <h1 class="mb-4 text-center">Dự Đoán Số Bác Sĩ Trên Đầu Người Dựa Trên Các Thông Số</h1>
+                    <h1 class="mb-4 text-center">Dự Đoán Số Bác Sĩ Dựa Trên Các Thông Số</h1>
                     <form id="predictionForm" action="/predict" method="POST" novalidate>
                         <!-- Numerical Inputs arranged in one row with four columns -->
                         <div class="row mb-3">
@@ -271,7 +271,7 @@
                                 <td>{{entry.thpt}}</td>
                                 <td>{{entry.hospital}}</td>
                                 <td>{{entry.subhospital}}</td>                   
-                                <td>{{ "{:,.2f}".format(entry.result) }} %</td>
+                                <td>{{entry.result }} </td>
                                 <td>{{ entry.date }}</td>
                             </tr>
                         {% endfor %}
